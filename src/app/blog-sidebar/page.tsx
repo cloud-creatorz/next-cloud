@@ -105,8 +105,8 @@ const BlogSidebarPage = () => {
                 </div>
                 <div>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  A newly identified vulnerability called "ALBeast" can cause a 
-                  significant risk for AWS Application Load Balancer (ALB) using the 
+                  A newly identified vulnerability called ALBeast can cause a 
+                  significant risk for AWS Application Load Balancer ALB using the 
                   load balancer authentication. This vulnerability was found by Miggo Research, 
                   meaning it is a severe problem that can lead to unauthorized access, data exfiltration, 
                   data breaches, and insider threats. Understanding it and mitigating this vulnerability 
@@ -128,11 +128,11 @@ const BlogSidebarPage = () => {
                   </h3>
                   <p className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
                   ALBeast is a configuration-based vulnerability, the base of this vulnerability is 
-                  "how AWS ALB handles the user authentication". ALB is a load balancer that operates on 
-                  the OSI model's Layer 7. Its purpose is to handle the traffic by distributing the incoming 
+                  how AWS ALB handles the user authentication. ALB is a load balancer that operates on 
+                  the OSI model s Layer 7. Its purpose is to handle the traffic by distributing the incoming 
                   application traffic across multiple targets like EC2 instances, containers, or IP addresses. 
                   On the one hand, the ALB improves reliability, fault tolerance, and scalability. And, the 
-                  misconfiguration in ALB's authentication process can lead to a security breach where 
+                  misconfiguration in ALB s authentication process can lead to a security breach where 
                   applications are exposed to the risk of being compromised.
                   The ALBeast vulnerability is critical because, with the help of this 
                   vulnerability, the attackers can bypass the critical security controls and lead 
@@ -155,7 +155,7 @@ const BlogSidebarPage = () => {
                     Missing Signer Validation: Many of the applications fail to verify the authenticity of the 
                     token signer, which means that the attacker can forge a token, manipulate it, impersonate 
                     it as a legitimate token, and present it to the application. Because of this misconfiguration, 
-                    the application does not validate the signer's identity, accepts the token then grants the 
+                    the application does not validate the signer s identity, accepts the token then grants the 
                     attacker unauthorized access.
                     </li>
                     <li className="mb-2 text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
@@ -170,18 +170,18 @@ const BlogSidebarPage = () => {
                     </h3>
                     <li className="mb-2 text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
                     Setting Up a Malicious ALB: The attacker creates the malicious Application 
-                    Load Balancer (ALB) which has similar configurations to the victim's setup.
+                    Load Balancer (ALB) which has similar configurations to the victim s setup.
                     </li>
                     <li className="mb-2 text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
                     Forging a Token: The attacker forges a token and changes the information inside it, 
-                    especially the part that says who issued it, to match what the victim’s application considers legitimate.
+                    especially the part that says who issued it, to match what the victim s application considers legitimate.
                     </li>
                     <li className="mb-2 text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
                     Altering the Configurations: The attacker changes the configurations on the Malicious ALB so that 
-                    AWS signs the token in a way that makes it look legitimate to the victim’s system.
+                    AWS signs the token in a way that makes it look legitimate to the victim s system.
                     </li>
                     <li className="mb-2 text-base font-medium text-body-color sm:text-lg lg:text-base xl:text-lg">
-                    Bypassing Defenses: The attacker then uses this fake token to trick the victim’s 
+                    Bypassing Defenses: The attacker then uses this fake token to trick the victim s 
                     application into bypassing security checks and gaining unauthorized access.
                     </li>
                     <br></br>

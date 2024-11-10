@@ -98,7 +98,7 @@ const BlogDetailsPage = () => {
                 </div>
                 <div>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  In today's rapidly evolving digital landscape, businesses must be agile, 
+                  In today s rapidly evolving digital landscape, businesses must be agile, 
                   secure, and efficient to stay ahead of the competition. 
                   At Cloud Creatorz, we specialize in designing and securing 
                   large-scale cloud infrastructures that empower organizations to 
@@ -120,14 +120,14 @@ const BlogDetailsPage = () => {
                   </h3>
                   <p className="mb-8 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
                   At Cloud Creatorz, we understand that no single cloud provider 
-                  can meet every organization's needs. That's why we offer
+                  can meet every organization s needs. That s why we offer
                     <strong className="text-primary dark:text-white">
                     multi-cloud services 
                     </strong>
                     that enable businesses to integrate multiple cloud platforms 
                     into a cohesive infrastructure. Our multi-cloud solutions allow 
                     businesses to choose the best services from different providers based on 
-                    their specific requirements, whether it's performance, cost-efficiency, or 
+                    their specific requirements, whether it s performance, cost-efficiency, or 
                     geographical reach.
                   </p>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
@@ -157,7 +157,7 @@ const BlogDetailsPage = () => {
                   <strong className="text-primary dark:text-white">
                   highly scalable.
                     </strong>
-                    Whether you're experiencing rapid growth or seasonal traffic spikes, 
+                    Whether you re experiencing rapid growth or seasonal traffic spikes, 
                     our infrastructures can scale up or down in real-time to accommodate your evolving needs. 
                     This means you only pay for the resources you use, making our solutions both cost-effective 
                     and performance-driven.
@@ -178,7 +178,7 @@ const BlogDetailsPage = () => {
                   cloud management services
                     </strong>
                     ensure that your infrastructure is always optimized, secure, and 
-                    aligned with the latest industry best practices. Whether you're moving 
+                    aligned with the latest industry best practices. Whether you re moving 
                     workloads, optimizing performance, or handling data governance, 
                     Cloud Creatorz is your trusted partner for ongoing cloud management.
                   </p>
@@ -186,7 +186,7 @@ const BlogDetailsPage = () => {
                   Cloud Security: Safeguarding Your Data at Every Layer
                   </h3>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  At Cloud Creatorz, security isn’t an afterthought – it's integrated into everything we do. 
+                  At Cloud Creatorz, security isnt an afterthought  it s integrated into everything we do. 
                   We leverage advanced tools and frameworks to create
                   <strong className="text-primary dark:text-white">
                   multi-layered security
@@ -235,7 +235,7 @@ const BlogDetailsPage = () => {
                   Ready to Take Your Business to the Cloud?
                   </h3>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                  Whether you're starting with cloud migration, building a multi-cloud environment, 
+                  Whether you re starting with cloud migration, building a multi-cloud environment, 
                   or securing your large data infrastructure, Cloud Creatorz has the expertise to help 
                   you succeed. Contact us today to learn how we can design, secure, and optimize your 
                   cloud infrastructure for a scalable, flexible, and future-proof digital environment.

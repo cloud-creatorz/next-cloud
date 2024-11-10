@@ -28,7 +28,7 @@ const AboutPage = () => {
           {/* Text Content */}
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
             <p className="text-[17px] text-white">
-              Cloud creatorz has consistently been at the forefront of driving cloud transformation across industries. With over 150+ businesses globally relying on our expertise, we've designed solutions that drive measurable business value and foster digital agility. Our clients see cloud solutions not just as a technological upgrade but as a strategic enabler that unlocks new revenue streams, reduces operational costs, and enhances customer experience.
+              Cloud creatorz has consistently been at the forefront of driving cloud transformation across industries. With over 150+ businesses globally relying on our expertise, we ve designed solutions that drive measurable business value and foster digital agility. Our clients see cloud solutions not just as a technological upgrade but as a strategic enabler that unlocks new revenue streams, reduces operational costs, and enhances customer experience.
               <br />
               <br />
               Our team has successfully implemented over 100 cloud-based initiatives, helping businesses pivot to the cloud and thrive in an increasingly digital-first world.
@@ -96,7 +96,7 @@ const AboutPage = () => {
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-md h-auto">
                 <Image
-                  src="/images/blog/about-3.png" // Reference the image inside the 'public' folder
+                  src="/images/blog/about-3.png"  
                   alt="Cloud Creatorz Mission"
                   width={819}
                   height={480}
@@ -125,7 +125,7 @@ const AboutPage = () => {
                   <p className="text-[20px] text-white text-center">
                     At Cloud creatorz, our values are deeply ingrained in everything we do. We believe in enabling businesses to not only adopt cloud technologies but to use them as a platform for business growth and transformation.
                     <br />
-                    Our commitment to transparency, continuous improvement, and customer-centricity ensures that we always put our clients' needs at the heart of every solution we deliver. Through these values, we consistently exceed expectations and build long-term relationships.
+                    Our commitment to transparency, continuous improvement, and customer-centricity ensures that we always put our clients needs at the heart of every solution we deliver. Through these values, we consistently exceed expectations and build long-term relationships.
                   </p>
                 </div>
               </div>
@@ -296,7 +296,7 @@ const AboutPage = () => {
                     <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Reliability</strong></h3>
                     <br />
                     <br />
-                    <p className="paragraph-2 text-[15px]">We uphold the highest standards of reliability and security, safeguarding our clients' data and ensuring uninterrupted access to our services.</p>
+                    <p className="paragraph-2 text-[15px]">We uphold the highest standards of reliability and security, safeguarding our clients data and ensuring uninterrupted access to our services.</p>
                   </div>
                   <div className="spacer-large"></div>
                   <div className="about_cta-wrapper">
@@ -382,7 +382,7 @@ const AboutPage = () => {
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-full max-w-md h-auto">
               <Image
-                src="/images/blog/about-1.png" // Reference the image inside the 'public' folder
+                src="/images/blog/about-1.png" 
                 alt="Cloud Creatorz Achievements"
                 width={819}
                 height={480}
