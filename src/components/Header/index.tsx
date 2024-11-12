@@ -173,9 +173,9 @@ const Header = () => {
                 >
                   Book a call
                 </Link>
-               {/* <div>
+               <div>
                   <ThemeToggler />
-                </div> */}
+                </div> 
               </div>
             </div>
           </div>
