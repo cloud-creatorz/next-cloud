@@ -152,7 +152,7 @@ const AboutPage = () => {
                         but leverage them as a foundation for growth and transformation. 
                         <br />
                         Our focus on transparency, ongoing improvement, and customer-centricity ensures that 
-                        we prioritize our clients' needs in every solution we provide. 
+                        we prioritize our clients needs in every solution we provide. 
                         These guiding principles allow us to consistently surpass expectations and foster lasting relationships.
                   </p>
                 </div>
@@ -407,7 +407,7 @@ const AboutPage = () => {
           >
             <p className="text-[21px] text-white">
              At Cloud Creatorz, we stand at the forefront of cloud computing, where innovation, reliability, 
-             and integrity drive everything we do. Together, let's reshape the future of business by unlocking 
+             and integrity drive everything we do. Together, let s reshape the future of business by unlocking 
              the true potential of the cloud, empowering organizations to achieve their goals with unmatched ease 
              and efficiency.</p>
           </div>
