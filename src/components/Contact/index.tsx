@@ -1,6 +1,36 @@
-import NewsLatterBox from "./NewsLatterBox";
+"use client";
 
+import NewsLatterBox from "./NewsLatterBox";
+import { useState } from "react";
 const Contact = () => {
+
+  const [emailData, setEmailData] = useState({
+    name:'',
+    to: '',
+    subject: ' To cloud-creatorsz support team ',
+    text:''
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(emailData)
+    try {
+      const response = await fetch('https://mailer-qobf.onrender.com/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      const result = await response.json();
+      alert(result.message);
+      setEmailData({...emailData,name:'',to:'',text:''})
+    } catch (error) {
+      alert('Failed to send email');
+      console.error(error);
+    }
+  }
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -30,6 +60,8 @@ const Contact = () => {
                       <input
                         type="text"
                         placeholder="Enter your name"
+                        value={emailData.name}
+                        onChange={(e) => setEmailData({ ...emailData, name: e.target.value })}
                         className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -45,6 +77,8 @@ const Contact = () => {
                       <input
                         type="email"
                         placeholder="Enter your email"
+                        value={emailData.to}
+                        onChange={(e) => setEmailData({ ...emailData, to: e.target.value })}
                         className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       />
                     </div>
@@ -61,12 +95,15 @@ const Contact = () => {
                         name="message"
                         rows={5}
                         placeholder="Enter your Message"
+                        value={emailData.text}
+                        onChange={(e) => setEmailData({ ...emailData, text: e.target.value })}
                         className="border-stroke w-full resize-none rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
                       ></textarea>
                     </div>
                   </div>
                   <div className="w-full px-4">
-                    <button className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
+                    <button className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+                    onClick={handleSubmit}>
                       Submit Ticket
                     </button>
                   </div>
