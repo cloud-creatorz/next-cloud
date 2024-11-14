@@ -124,7 +124,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <Link
-                      href="/Services"
+                      href="/blog-details"
                       className="text-base font-medium text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Our mission & vision
@@ -158,7 +158,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <Link
-                      href="/aboutpage"
+                      href="/blog"
                       className="text-base font-medium text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Blog
@@ -166,7 +166,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <Link
-                      href="/blog"
+                      href="/aboutpage"
                       className="text-base font-medium text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Careers
@@ -200,10 +200,10 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <Link
-                      href="tel:+1234567890"
+                      href="tel:+91 6382197744"
                       className="text-base font-medium text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      +91 9345678921
+                      +91 6382197744
                     </Link>
                   </li>
                   <li className="mb-4">
@@ -211,7 +211,7 @@ const Footer = () => {
                       href="/"
                       className="text-base font-medium text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Tamil Nadu, India
+                      278, 5th Cross cut, Opposite to kalyan, Ghandhippuram, Coimbatore, Tamil Nadu, India 641012
                     </Link>
                   </li>
                 </ul>

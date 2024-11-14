@@ -5,17 +5,14 @@ import Breadcrumb from "../../components/Common/Breadcrumb";
 import Image from "next/image";
 import { useInView } from 'react-intersection-observer';
 
-
-
-
 const AboutPage = () => {
-    const [inViewLeft, setInViewLeft] = useState(false);
+  const [inViewLeft, setInViewLeft] = useState(false);
   const [inViewRight, setInViewRight] = useState(false);
+  const [theme, setTheme] = useState('light'); // Default theme is light
 
-  // Intersection Observer hooks
   const { ref: leftRef, inView: leftInView } = useInView({
-    triggerOnce: true, // Trigger only once when it enters the view
-    threshold: 0.5, // Trigger when 50% of the element is in view
+    triggerOnce: true,
+    threshold: 0.5,
   });
 
   const { ref: rightRef, inView: rightInView } = useInView({
@@ -24,16 +21,31 @@ const AboutPage = () => {
   });
 
   useEffect(() => {
-    if (leftInView) {
-      setInViewLeft(true);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme('light');
     }
-    if (rightInView) {
-      setInViewRight(true);
-    }
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  useEffect(() => {
+    if (leftInView) setInViewLeft(true);
+    if (rightInView) setInViewRight(true);
   }, [leftInView, rightInView]);
   return (
     <>
-      <div className="mt-10 text-center text-5xl font-bold px-4 py-10 text-white">
+      <div className="mt-10 text-center text-5xl font-bold px-4 py-10 dark:text-black text-white">
         <Breadcrumb
           pageName="About Us"
           description="We at Cloud creatorz love building tailor-made cloud solutions to help you generate tangible returns on investment and be your trusted companion to digital transformation."
@@ -44,7 +56,7 @@ const AboutPage = () => {
       {/* Our Mission */}
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">Our Mission</h2>
+          <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">Our Mission</h2>
         </div>
 
         <div className="flex flex-wrap items-center justify-between mb-16">
@@ -52,7 +64,7 @@ const AboutPage = () => {
             ref={leftRef}
             className={`w-full lg:w-1/2 mb-8 lg:mb-0 scroll-animation ${inViewLeft ? 'slide-left' : ''}`}
           >
-            <p className="text-[17px] text-white">
+            <p className="text-[17px]  text-black dark:text-white">
               At Cloud creatorz, we are on a mission to enable businesses to succeed in an increasingly cloud-first world. 
               <br />
               <br />
@@ -81,15 +93,15 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
             <div className="text-4xl font-bold text-deep-teal mb-2">4+</div>
-            <p className="text-xl text-white">Cloud services providers</p>
+            <p className="text-xl text-black dark:text-white">Cloud services providers</p>
           </div>
           <div>
             <div className="text-4xl font-bold text-deep-teal mb-2">100+</div>
-            <p className="text-xl text-white">IT infra management</p>
+            <p className="text-xl text-black dark:text-white">IT infra management</p>
           </div>
           <div>
             <div className="text-4xl font-bold text-deep-teal mb-2">storage</div>
-            <p className="text-xl text-white">Migrations support</p>
+            <p className="text-xl text-black dark:text-white">Migrations support</p>
           </div>
         </div> 
         <br />
@@ -139,14 +151,14 @@ const AboutPage = () => {
             <div className="about_head-wrapper">
               <div className="container mx-auto px-6">
                 <div className="mb-12 text-center">
-                  <div className="section-tag text-lg text-white-500">Culture and DNA</div>
-                  <h2 className="text-4xl font-bold text-deep-teal mb-4">Our Values</h2>
+                  <div className="section-tag text-lg text-white-500  text-black dark:text-white">Culture and DNA</div>
+                  <h2 className="text-4xl font-bold text-deep-teal mb-4  text-black dark:text-white">Our Values</h2>
                 </div>
                 <div 
                   ref={rightRef}
                   className={`w-full lg:w-full mb-12 lg:mb-0 scroll-animation ${inViewRight ? 'slide-right' : ''}`}
                   >
-                  <p className="text-[20px] text-white text-center">
+                  <p className="text-[20px] text-black dark:text-white text-center">
                         At Cloud Creatorz, our core values are at the heart of everything we do. 
                         We are dedicated to helping businesses not just adopt cloud technologies, 
                         but leverage them as a foundation for growth and transformation. 
@@ -164,10 +176,10 @@ const AboutPage = () => {
                   {/* Integrity Tab */}
                   <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-indigo-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-indigo-500 transition-all duration-300 ease-in-out">
                     <div className="about_tab-head-wrapper">
-                      <h3 className="heading-style-h4 text-[25px] text-white font-bold">Integrity</h3>
+                      <h3 className="heading-style-h4 text-[25px] text-black dark:text-white font-bold">Integrity</h3>
                       <br />
                       <br />
-                      <p className="paragraph text-[15px]">Our integrity is the foundation of all our relationships. We ensure that our clients’ data and assets are treated with the utmost care, upholding the highest standards of trust and accountability.</p>
+                      <p className="paragraph text-[15px]  text-black dark:text-white">Our integrity is the foundation of all our relationships. We ensure that our clients’ data and assets are treated with the utmost care, upholding the highest standards of trust and accountability.</p>
                     </div>
                     <div className="spacer-large"></div>
                     <div className="about_cta-wrapper">
@@ -185,10 +197,10 @@ const AboutPage = () => {
                   {/* Innovation Tab */}
                   <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-blue-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-500 transition-all duration-300 ease-in-out">
                     <div className="about_tab-head-wrapper">
-                      <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Innovation</strong></h3>
+                      <h3 className="heading-style-h4 text-[25px] text-black dark:text-white "><strong>Innovation</strong></h3>
                       <br />
                       <br />
-                      <p className="paragraph-2 text-[15px]">Innovation drives us to explore new technologies, constantly refining our cloud solutions to deliver unmatched performance and value for our clients.</p>
+                      <p className="paragraph-2 text-[15px] ">Innovation drives us to explore new technologies, constantly refining our cloud solutions to deliver unmatched performance and value for our clients.</p>
                     </div>
                     <div className="spacer-large"></div>
                     <div className="about_cta-wrapper">
@@ -206,7 +218,7 @@ const AboutPage = () => {
                   {/* Collaboration Tab */}
                   <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-teal-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-teal-500 transition-all duration-300 ease-in-out">
                     <div className="about_tab-head-wrapper">
-                      <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Collaboration</strong></h3>
+                      <h3 className="heading-style-h4 text-[25px]  text-black dark:text-white "><strong>Collaboration</strong></h3>
                       <br />
                       <br />
                       <p className="paragraph-3 text-[15px]">We thrive on collaboration—whether within our teams or with our clients—because we believe the best results come from diverse perspectives and working together toward a shared goal.</p>
@@ -226,7 +238,7 @@ const AboutPage = () => {
 
                   {/* Excellence Tab */}
                   <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-yellow-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-yellow-500 transition-all duration-300 ease-in-out">
-                    <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Excellence</strong></h3>
+                    <h3 className="heading-style-h4 text-[25px] text-black dark:text-white"><strong>Excellence</strong></h3>
                     <div className="about_tab-head-wrapper is-doubled">
                       <br />
                       <br />
@@ -254,14 +266,14 @@ const AboutPage = () => {
               {/* Our Achievements Section */}
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">Purpose</h2>
+          <h2 className="text-4xl font-bold mb-4 text-black dark:text-white">Purpose</h2>
         </div>
       </div>
       
       <div className="flex flex-wrap items-center justify-between mb-16 slide-left">
           {/* Text Content */}
           <div className="w-full lg:w-full mb-12 lg:mb-0">
-                  <p className="text-[25px] text-white text-center">
+                  <p className="text-[25px] text-black dark:text-white text-center">
                   exists to empower businesses to embrace
                     <br />
                     the future with confidence. By providing best-in-
@@ -280,11 +292,11 @@ const AboutPage = () => {
             <div className="about_head-wrapper">
               <div className="container mx-auto px-6">
                 <div className="mb-12 text-center">
-                  <div className="section-tag text-lg text-white-500">Business Fundamentals</div>
-                  <h2 className="text-4xl font-bold text-deep-teal mb-4">Our Principles</h2>
+                  <div className="section-tag text-lg text-white-500  text-black dark:text-white">Business Fundamentals</div>
+                  <h2 className="text-4xl font-bold text-deep-teal mb-4  text-black dark:text-white">Our Principles</h2>
                 </div>
                 <div className="w-full lg:w-full mb-12 lg:mb-0">
-                  <p className="text-[20px] text-white text-center">
+                  <p className="text-[20px] text-black dark:text-white text-center">
                     Cloud creatorz is built upon a foundation of principles that guide our decisions and actions each day.
                     <br />
                     From prioritizing customer satisfaction to fostering a culture of continuous learning and improvement, our
@@ -300,7 +312,7 @@ const AboutPage = () => {
                     {/* Customer Centricity Tab */}
                     <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-pink-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-pink-500 transition-all duration-300 ease-in-out">
                       <div className="about_tab-head-wrapper">
-                        <h3 className="heading-style-h4 text-[25px] text-white font-bold">Customer Centricity</h3>
+                        <h3 className="heading-style-h4 text-[25px]  text-black dark:text-white">Customer Centricity</h3>
                         <br />
                         <br />
                         <p className="paragraph text-[15px]">We prioritize the needs and objectives of our clients above all else, ensuring that every decision we make is driven by a commitment to their success.</p>
@@ -321,7 +333,7 @@ const AboutPage = () => {
                     {/* Reliability Tab */}
                     <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-blue-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-blue-500 transition-all duration-300 ease-in-out">
                       <div className="about_tab-head-wrapper">
-                        <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Reliability</strong></h3>
+                        <h3 className="heading-style-h4 text-[25px] text-black dark:text-white"><strong>Reliability</strong></h3>
                         <br />
                         <br />
                         <p className="paragraph-2 text-[15px]">We uphold the highest standards of reliability and security, safeguarding our clients data and ensuring uninterrupted access to our services.</p>
@@ -342,7 +354,7 @@ const AboutPage = () => {
                     {/* Continuous Improvement Tab */}
                     <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-green-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-green-500 transition-all duration-300 ease-in-out">
                       <div className="about_tab-head-wrapper">
-                        <h3 className="heading-style-h4 text-[20px] text-white font-bold"><strong>Continuous Improvement</strong></h3>
+                        <h3 className="heading-style-h4 text-[20px]  text-black dark:text-white"><strong>Continuous Improvement</strong></h3>
                         <br />
                         <br />
                         <p className="paragraph-3 text-[15px]">We never settle for the status quo. We are committed to continuous learning and improvement, always striving to enhance our products, services, and processes.</p>
@@ -362,7 +374,7 @@ const AboutPage = () => {
 
                     {/* Adaptability Tab */}
                     <div className="about_tab bg-transparent p-6 rounded-lg border border-gray-300 shadow-lg hover:border-teal-500 hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-teal-500 transition-all duration-300 ease-in-out">
-                      <h3 className="heading-style-h4 text-[25px] text-white font-bold"><strong>Adaptability</strong></h3>
+                      <h3 className="heading-style-h4 text-[23px]  text-black dark:text-white"><strong>Adaptability</strong></h3>
                       <div className="about_tab-head-wrapper is-doubled">
                         <br />
                         <br />
@@ -396,7 +408,7 @@ const AboutPage = () => {
         <div className="mb-12 text-left">
         <div className="section-tag text-[26px] text-lg text-white-500 slide-right">Our People</div>
           <br />
-          <h2 className="text-[30px] mb-4 text-white slide-left">We are Cloud Creatorz</h2>
+          <h2 className="text-[30px] mb-4  text-black dark:text-whiteslide-left">We are Cloud Creatorz</h2>
         </div>
 
         <div className="flex flex-wrap items-center justify-between mb-16">
@@ -405,7 +417,7 @@ const AboutPage = () => {
             ref={leftRef}
             className={`w-full lg:w-1/2 mb-8 lg:mb-0 scroll-animation ${inViewLeft ? 'slide-left' : ''}`}
           >
-            <p className="text-[21px] text-white">
+            <p className="text-[21px]  text-black dark:text-white">
              At Cloud Creatorz, we stand at the forefront of cloud computing, where innovation, reliability, 
              and integrity drive everything we do. Together, let s reshape the future of business by unlocking 
              the true potential of the cloud, empowering organizations to achieve their goals with unmatched ease 

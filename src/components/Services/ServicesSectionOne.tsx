@@ -1,6 +1,9 @@
+'use client';
+
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
-import React from "react";
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const checkIcon = (
   <svg width="16" height="13" viewBox="0 0 16 13" className="fill-current">
@@ -9,8 +12,33 @@ const checkIcon = (
 );
 
 const ServicesSectionOne = () => {
-  const List = ({ text }) => (
-    <p className="mb-5 flex items-center text-lg font-medium text-body-color">
+  const [inView, setInView] = useState([false, false, false, false, false, false]);
+
+  // Intersection Observer hooks for detecting visibility of sections
+  const { ref: leftRef, inView: leftInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const { ref: rightRef, inView: rightInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  // Set items to be in view after intersection
+  React.useEffect(() => {
+    if (leftInView || rightInView) {
+      setInView([true, true, true, true, true, true]);
+    }
+  }, [leftInView, rightInView]);
+
+  // List component that triggers the animation based on inView state
+  const List = ({ text, index }) => (
+    <p
+      className={`mb-5 flex items-center text-lg font-medium text-body-color ${
+        inView[index] ? "slide-left" : ""
+      }`}
+    >
       <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
         {checkIcon}
       </span>
@@ -25,26 +53,35 @@ const ServicesSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Empowering Your Cloud Journey with Cloud Creatorz."
-                paragraph="At Cloud Creatorz, we harness the power of cloud technology to deliver innovative solutions tailored to your business needs."
+                title="Empowering Your Cloud Journey with Cloud Creatorz"
+                paragraph="At Cloud Creatorz, we harness the power of cloud technology to deliver innovative solutions tailored to your business needs"
                 mb="44px"
               />
 
-              <div
-                className="mb-12 max-w-[570px] lg:mb-0"
-                data-wow-delay=".15s"
-              >
+              <div className="mb-12 max-w-[570px] lg:mb-0">
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Scalable Cloud Solutions" />
-                    <List text="AI-Driven Services" />
-                    <List text="Robust Security Protocols" />
+                    <div ref={leftRef}>
+                      <List text="Scalable Cloud Solutions" index={0} />
+                    </div>
+                    <div ref={leftRef}>
+                      <List text="AI-Driven Services" index={1} />
+                    </div>
+                    <div ref={leftRef}>
+                      <List text="Robust Security Protocols" index={2} />
+                    </div>
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="24/7 Expert Support" />
-                    <List text="Seamless Cloud Migration" />
-                    <List text="Cost-Effective Strategies" />
+                    <div ref={rightRef}>
+                      <List text="24/7 Expert Support" index={3} />
+                    </div>
+                    <div ref={rightRef}>
+                      <List text="Seamless Cloud Migration" index={4} />
+                    </div>
+                    <div ref={rightRef}>
+                      <List text="Cost-Effective Strategies" index={5} />
+                    </div>
                   </div>
                 </div>
               </div>

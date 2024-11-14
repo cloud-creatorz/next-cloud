@@ -62,7 +62,6 @@
   animation: slideInRight 1s ease-out forwards;
 }
 
-
 .container {
   padding: 20px;
 }
@@ -75,4 +74,8 @@
 .heading {
   font-size: 24px;
   font-weight: bold;
+}
+
+.hidden {
+  display: none;
 }
