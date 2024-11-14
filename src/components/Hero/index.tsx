@@ -13,8 +13,12 @@ const Hero = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+<<<<<<< HEAD
                 Cloud Creatorz offers managed cloud, AI, 
                 cloud migration products and IT infra management services
+=======
+                Cloud Creatorz offers managed cloud, AI, and cloud migration products and IT infra management
+>>>>>>> 3c05421f3b26821b6bc327b2713de833b7405107
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
                 We are a passionate team of tech 
