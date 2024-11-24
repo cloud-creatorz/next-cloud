@@ -47,6 +47,14 @@ const Bookacall = () => {
                 ))}
             </div>
           </div>
+              <div className="w-full lg:w-1/2 px-4">
+                <img
+                  src="/images/services/book.gif"  
+                  alt="Description of image"
+                  className="w-full h-auto object-cover"
+                  style={{ marginTop: '120px' }}
+                />
+              </div>
         </div>
       </section>
     </>

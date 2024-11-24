@@ -86,22 +86,16 @@ function BookAppointment() {
       alert('An error occurred while submitting your booking.');
     }
   };
-  
-  
-  
 
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
 <Button
-  className="ease-in-up shadow-btn hover:shadow-btn-hover rounded-sm bg-primary py-6 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9 flex items-center justify-center"
+  className="ease-in-up shadow-btn hover:shadow-btn-hover rounded-sm bg-primary py-6 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9 flex items-center justify-center ml-16"
   onClick={() => setIsDialogOpen(true)}
 >
-  <span className="relative top-[-5px]">Talk to an expert</span>
+  <span className="relative top-[-10px]">Talk to an expert</span>
 </Button>
-
-
-
 
 
       </DialogTrigger>
